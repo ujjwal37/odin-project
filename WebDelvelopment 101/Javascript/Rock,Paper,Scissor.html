@@ -1,0 +1,49 @@
+<html>
+    <head> 
+        <title> Rock Paper Sciscor</title>
+    </head>
+    <script>
+        console.log("Let Start the Game!!");
+        var userPoint = 0 ;
+        var computerPoint = 0;
+        function randomlyGenerated(){
+           var arr  = ["rock" , "paper" , "scissor"];
+           var num   =Math.floor(Math.random() * 2) + 0;
+           return arr[num];
+       }
+        function game(){
+            for(var count = 0 ; count < 5; count++){
+       var userChoice = prompt("Enter your Choice","Rock, Paper , Scissor");
+       userChoice.toLowerCase();
+       var ComputerChoice = randomlyGenerated();
+       if(userChoice == ComputerChoice){
+           console.log("Tie "+userChoice +" for " + userChoice);
+           userPoint++;
+           computerPoint++;
+       }else if(userChoice == "rock" && ComputerChoice == "scissor"){
+           userPoint++;
+           console.log("You Win from computer rock over Scissor ");
+       }else if(userChoice.localeCompare("rock") && ComputerChoice.localeCompare("paper")){
+           computerPoint++;
+       console.log("You Loose from Computer Paper over Rock");
+       }else if(userChoice == "paper" && ComputerChoice == "rock" ){
+            userPoint++;
+           console.log("You Win from Computer Paper over Rock");
+       }else if(userChoice == "paper" && ComputerChoice == "scissor"){
+           computerPoint++;
+           console.log("You loose from Computer Scissor over Paper")
+       }else if( userChoice == "scissor" && ComputerChoice == "rock"){
+           computerPoint++;
+           console.log("You loose from Computer Rock over Scissor");
+       }else if( userChoice == "scissor" && ComputerChoice == "paper"){
+           userPoint++;
+           console.log("You Win from Computer Scisor over Paper");
+       }
+    }
+    }
+    game();
+    console.log("Here are the scores UserScore:" + userPoint +"\n ComputerScore:"+ computerPoint);
+    if(userPoint > computerPoint) console.log("Congratulation You Win the Game!!");
+    else console.log("You Loose!! Better Luck Next Time");
+    </script>
+</html>
